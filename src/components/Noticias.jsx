@@ -10,6 +10,7 @@ const Noticias = ({ noticias }) => {
                         key={key}
                         tituloNoticia={noticia.title}
                         descripcionNoticia={noticia.description}
+                        imagenNoticia={noticia.image_url}
                     ></Noticia>
                 );
             })}
