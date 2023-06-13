@@ -1,6 +1,5 @@
 import Titulo from "./components/Titulo";
 import Formulario from "./components/Formulario";
-import Noticias from "./components/Noticias"
 import Container from "react-bootstrap/Container";
 
 import "./App.css";
