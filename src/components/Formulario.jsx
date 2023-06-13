@@ -9,7 +9,6 @@ const Formulario = () => {
 
     useEffect(() => {
         consultaAPI();
-        console.log("ejecutaUseEffect");
     }, [categoria]);
 
     const consultaAPI = async () => {
@@ -19,8 +18,7 @@ const Formulario = () => {
                 `https://newsdata.io/api/1/news?apikey=pub_24258a6531c5682a2442ca019fbef4b170fd4&q=${categoria || "sport"}&language=es&country=ar`
             );
             const datos = await peticion.json();
-            console.log(datos);
-            console.log(datos.results);
+            
             let noticias = datos.results;
             setNoticias(noticias);
         } catch (error) {
@@ -34,7 +32,6 @@ const Formulario = () => {
 
     const handleSelectCategory = (categoria) => {
         const categoriaValue = categoria.target.value;
-        console.log(categoriaValue);
         setCategoria(categoriaValue);
     };
     return (
@@ -48,7 +45,7 @@ const Formulario = () => {
                 >
                     <option>Seleccione una categoria</option>
                     <option value="sports">Deportes</option>
-                    <option value="trends">Tendencias</option>
+                    <option value="health">Salud</option>
                     <option value="technology">Tecnologia</option>
                 </Form.Select>
                 <Button variant="primary" type="submit">
